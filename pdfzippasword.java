@@ -1,5 +1,3 @@
-package pdfzippasword;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,8 +15,8 @@ public class pdfzippasword {
 	public static void main(String[] args) throws IOException, DocumentException {
 		// TODO Auto-generated method stub
 		
-		File outEncryptpdfFileName = new File("BANK_CHKMNGTDTLV4_18031500V56P4.PDF");
-		FileInputStream filePdfCopy = new FileInputStream("BANK_CHKMNGTDTLV4_18031500V56P.PDF");   
+		File outEncryptpdfFileName = new File("Protected_PDF.PDF");
+		FileInputStream filePdfCopy = new FileInputStream("Original_PDF.PDF");   
 		PdfReader pdfReader = new PdfReader(filePdfCopy);
 	    PdfStamper pdfStamper = new PdfStamper(pdfReader, new FileOutputStream(outEncryptpdfFileName));
 	    String zipPassword1 = "testpass#";
