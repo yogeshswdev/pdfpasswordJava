@@ -18,14 +18,14 @@ public class pdfzippasword {
 		File outEncryptpdfFileName = new File("Protected_PDF.PDF");
 		FileInputStream filePdfCopy = new FileInputStream("Original_PDF.PDF");   
 		PdfReader pdfReader = new PdfReader(filePdfCopy);
-	    PdfStamper pdfStamper = new PdfStamper(pdfReader, new FileOutputStream(outEncryptpdfFileName));
-	    String zipPassword1 = "testpass#";
-	    String zipPassword = zipPassword1.trim();
-	    zipPassword= URLEncoder.encode(zipPassword,"UTF-8");
+	     	PdfStamper pdfStamper = new PdfStamper(pdfReader, new FileOutputStream(outEncryptpdfFileName));
+	   	String zipPassword1 = "testpass#";
+	        String zipPassword = zipPassword1.trim();
+	        zipPassword= URLEncoder.encode(zipPassword,"UTF-8");
 		pdfStamper.setEncryption(zipPassword.getBytes("UTF-8"), zipPassword.getBytes("UTF-8"),
 	        PdfWriter.ALLOW_PRINTING, PdfWriter.ENCRYPTION_AES_128 | PdfWriter.DO_NOT_ENCRYPT_METADATA);
 	    
-	    pdfStamper.close();
+	        pdfStamper.close();
 		pdfReader.close();
 		filePdfCopy.close();
 
